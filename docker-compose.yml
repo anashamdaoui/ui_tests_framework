@@ -1,0 +1,36 @@
+# To execute this docker-compose yml file use docker-compose -f <file_name> up
+# Add the "-d" flag at the end for deattached execution
+version: "1"
+services:
+  selenium-hub:
+    image: ahamdaoui/robotframeworkhub
+    container_name: selenium-hub
+    volumes:
+      - /home/dshadow/workspace/seleniumhub/tests:/root/tests
+      - /home/dshadow/workspace/seleniumhub/reports:/root/reports
+    ports:
+      - "4444:4444"
+    expose:
+      - "22"
+
+  chrome_node:
+    image: selenium/node-chrome:3.12.0-boron
+    container_name: chrome_node
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
+
+  firefox_node:
+    image: selenium/node-firefox:3.12.0-boron
+    container_name: firefox_node
+    volumes:
+      - /dev/shm:/dev/shm
+    depends_on:
+      - selenium-hub
+    environment:
+      - HUB_HOST=selenium-hub
+      - HUB_PORT=4444
