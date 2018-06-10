@@ -1,9 +1,9 @@
 # To execute this docker-compose yml file use docker-compose -f <file_name> up
 # Add the "-d" flag at the end for deattached execution
-version: "1"
+version: "3"
 services:
   selenium-hub:
-          image: ahamdaoui/robotframeworkhub:latest
+    image: ahamdaoui/robotframeworkhub:latest
     container_name: selenium-hub
     volumes:
       - ~/e2etest_vol/tests:/root/tests
