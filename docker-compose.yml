@@ -6,8 +6,8 @@ services:
           image: ahamdaoui/robotframeworkhub:latest
     container_name: selenium-hub
     volumes:
-      - /home/dshadow/workspace/seleniumhub/tests:/root/tests
-      - /home/dshadow/workspace/seleniumhub/reports:/root/reports
+      - ~/e2etest_vol/tests:/root/tests
+      - ~/e2etest_vol/reports:/root/reports
     ports:
       - "4444:4444"
     expose:
