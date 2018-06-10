@@ -1,6 +1,4 @@
 # ui_tests_framework
-To build the image:
-docker build -f RobotFrameworkHub/Dockerfile -t localrepo/robothub
 
 docker-compose -f docker-compose.yml up -d
 will setup 3 containers:

@@ -3,7 +3,7 @@
 version: "1"
 services:
   selenium-hub:
-    image: ahamdaoui/robotframeworkhub
+          image: ahamdaoui/robotframeworkhub:latest
     container_name: selenium-hub
     volumes:
       - /home/dshadow/workspace/seleniumhub/tests:/root/tests
